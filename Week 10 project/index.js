@@ -10,14 +10,14 @@ document.getElementById('add').addEventListener('click', () => {
     row.insertCell(2).innerHTML = document.getElementById('new-start-date').value;
     row.insertCell(3).innerHTML = document.getElementById('new-end-date').value;
     let actions = row.insertCell(4);
-    actions.appendchild(createDeleteButton(id++))
+    actions.appendChild(createDeleteButton(id++))
     document.getElementById('new-task').value = '';
     
 });
 
 function createDeleteButton(id){
     let btn = document.createElement('button');
-    btn.className = 'btn btn-primary';
+    btn.className = 'btn btn-danger';
     btn.id = id;
     btn.innerHTML = 'Delete';
     btn.onclick = () => {
@@ -26,3 +26,5 @@ function createDeleteButton(id){
     }
     return btn;
 }
+document.getElementById('list').style.fontSize = "22px"
+document.getElementById('list').style.color = "green"
