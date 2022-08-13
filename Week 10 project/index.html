@@ -64,6 +64,24 @@
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+
+<div id="p-div"></div>
+    <input id="p-input" type="text" placeholder="New Paragraph">
+    <button id="p-button">Create</button>
+      <script>
+        const div = document.getElementById("p-div")
+        const newParagraph = document.getElementById("p-input")
+        const pButton = document.getElementById("p-button")
+        pButton.addEventListener("click", function(){
+        var node = document.createElement("p");
+        var textnode = document.createTextNode(newParagraph.value);
+        //add variable input to element
+        node.appendChild(textnode);
+        document.getElementById("p-div").appendChild(node);
+        newParagraph.value = ""
+         });
+
+      </script>
     
 </body>
 </html>
