@@ -12,14 +12,17 @@ body{
 }
 
 .board {
-    width: 100vw;
-    height: 100vh;
+    width: 75vw;
+    height: 75vh;
     display: grid;
     justify-content: center;
     align-content: center;
     justify-items: center;
     align-items: center;
-    grid-template-columns: repeat(3, auto)
+    grid-template-columns: repeat(3, auto);
+    padding: none;
+    border-style: dotted;
+    
 }
 
 .cell {
@@ -29,8 +32,9 @@ body{
     display: flex;
     justify-content: center;
     align-content: center;
-    position: relative;
+    
     cursor: pointer;
+
     
     
 }
@@ -38,22 +42,31 @@ body{
 .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3) {
-    border-top: none;
+    border-style: solid;
+    border-top-color: rgb(209, 37, 7);
+    border-top-width: 5px;
 }
 
 .cell:nth-child(3n + 1) {
-    border-left: none;
+    border-style: solid;
+    border-left-color: rgb(209, 37, 7);
+    border-left-width: 5px;
 }
 
 .cell:nth-child(3n + 3) {
-    border-right: none;
+    border-style: solid;
+    border-right-color: rgb(209, 37, 7);
+    border-right-width: 5px;
 }
 
 .cell:last-child,
 .cell:nth-child(8),
 .cell:nth-child(7) {
-    border-bottom: none;
+    border-style: solid;
+    border-bottom-color: rgb(209, 37, 7);
+    border-bottom-width: 5px;
 }
+
 
 .cell.x,
 .cell.circle {
@@ -61,42 +74,21 @@ body{
 }
 
 
-.cell.x::before,
-.cell.x::after {
-    content: "";
-    position: absolute;
-    width: calc(var(--mark-size) * .15);
-    height: var(--mark-size);
-    background-color: black;
-}
-.cell.x::before {
-    transform: rotate(45deg);
-}
-.cell.x::after{
-    transform: rotate(-45deg);
+.cell.x{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCjWHubFuQqlBZefFtnthiouqj592I2mLS6z1awOw&s);
+    background-position: center;
+    background-size: contain;
+    
 }
 
-
-
-
-.cell.circle::before,
-.cell.circle::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
+.cell.cell.circle{
+    background-image: url(https://content.sportslogos.net/logos/6/234/full/utah_jazz_logo_primary_19973688.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
 }
 
-.cell.circle::before {
-    width: var(--mark-size);
-    height: var(--mark-size);
-    background-color: black;
-}
-
-.cell.circle::after {
-    width: calc(var(--mark-size) * .7);
-    height: calc(var(--mark-size) * .7);
-    background-color: black
-}
 
 .winning-message {
     display: none;
@@ -115,17 +107,38 @@ body{
 
 .winning-message button {
     font-size: 3rem;
-    background-color: white;
     border: 1px solid black;
     padding: .25em .5em;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
+
 
 }
 .winning-message button:hover{
     background-color: black;
     color: white;
     border-color: white;
+    ;
 }
 .winning-message.show {
     display: flex;
+}
+
+.col{
+    display: flex;
+    
+}
+.headerbox{
+    display: flex;
+    justify-self: center;
+    
+
+}
+.col{
+    display: flex;
+    justify-content: center;
+}
+body{
+    color: black;
 }
