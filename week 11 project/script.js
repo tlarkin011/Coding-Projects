@@ -50,7 +50,7 @@ function handleClick(e) {
 
 function endGame(draw) {
   if (draw) {
-    wonGameText.innerText = 'Draw!'
+    wonGameText.innerText = 'Draw! How did you lose against yourself?'
   } else {
     wonGameText.innerText = `${circleTurn ? "Old Logo" : "New Logo"} Wins!`
   }
